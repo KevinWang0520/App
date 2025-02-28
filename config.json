@@ -1,0 +1,41 @@
+{
+    "dns": {
+        "servers": ["1.1.1.1","8.8.8.8"],
+        "queryStrategy": "UseIPv4"
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "6c49e326-a238-4eab-9895-f570ec9e9ccf",
+                        "flow": "xtls-rprx-vision"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "dest": "127.0.0.1:8001",
+                    "serverNames": ["www.aliyun.com"],
+                    "privateKey": "2Jpj4cvGKdEOg_O1MKpFqNmMA6CgRI9CwCGmscDLCkI",
+                    "shortIds": [""]
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {
+              "domainStrategy": "UseIPv4"
+            },
+            "tag": "direct"
+        }
+    ]
+}

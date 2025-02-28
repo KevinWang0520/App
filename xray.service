@@ -1,0 +1,10 @@
+[Unit]
+Description=xray
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/root/xray run
+
+[Install]
+WantedBy=multi-user.target
