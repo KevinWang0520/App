@@ -1,6 +1,6 @@
 {
     "dns": {
-        "servers": ["1.1.1.1","8.8.8.8"],
+        "servers": ["8.8.8.8","8.8.4.4"],
         "queryStrategy": "UseIPv4"
     },
     "inbounds": [
