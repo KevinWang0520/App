@@ -1,4 +1,9 @@
 {
+    "dns":{
+        "servers":[
+            "https://1.1.1.1/dns-query"
+        ]
+    },
     "inbounds": [
         {
             "listen": "0.0.0.0",
@@ -28,7 +33,26 @@
     "outbounds": [
         {
             "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIPv6v4"
+            },
             "tag": "direct"
+        },
+        {
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIPv4"
+            },
+            "tag": "ipv4"
         }
-    ]
+    ],
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "domain": ["xxx.com"],
+                "outboundTag": "ipv4"
+            }
+        ]
+    }
 }
