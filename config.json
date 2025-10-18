@@ -1,4 +1,7 @@
 {
+    "dns": {
+        "servers":["https://1.1.1.1/dns-query"]
+    },
     "inbounds": [
         {
             "listen": "0.0.0.0",
@@ -28,7 +31,8 @@
     "outbounds": [
         {
             "protocol": "freedom",
-            "tag": "direct"
+            "tag": "direct",
+            "domainStrategy": "UseIPv6v4"
         }
     ]
 }
